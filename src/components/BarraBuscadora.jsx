@@ -2,7 +2,7 @@ import React from 'react';
 
 const BarraBuscadora = ({ progreso = 66.6, onBuscar }) => {
     return (
-        <div className="bg-[#6D89A1] p-2 rounded-md flex justify-between items-center gap-4">
+        <div className="bg-[#6D89A1] ml-3.5 p-2 rounded-md flex justify-between items-center gap-4 h-auto shadow-md">
             {/* Barra de Progreso */}
             <div className="flex flex-col items-center w-1/2">
                 <div className="text-white text-sm mb-1 text-center">

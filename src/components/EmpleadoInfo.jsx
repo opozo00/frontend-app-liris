@@ -3,7 +3,7 @@ const EmpleadoInfo = ({ empleado }) => {
     if (!empleado) return null;
 
     return (
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 ml-3.5">
             <div>
                 <h3 className="font-bold border-b text-sm mb-2">Empleado</h3>
                 <div className="text-xs">
@@ -15,7 +15,7 @@ const EmpleadoInfo = ({ empleado }) => {
             </div>
             <div>
                 <h3 className="font-bold border-b text-sm mb-2">Jerarquía</h3>
-                <div className="text-xs p-1">
+                <div className="text-xs">
                     <p><strong>Posición Reporta A:</strong> {empleado.jefe?.cargo?.nombre || "Sin jefe asignado"}</p>
                     <p><strong>Reporta A:</strong> {empleado.jefe?.nombre} {empleado.jefe?.apellido || "Sin jefe asignado"}</p>
                     <p><strong>Línea de negocio:</strong> {empleado.departamento?.linea_negocio}</p>
