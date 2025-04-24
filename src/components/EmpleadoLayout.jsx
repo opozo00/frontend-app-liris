@@ -40,7 +40,7 @@ const Empleado = ({ empleado }) => {
                     <InfoEmpleado empleado={empleado} />
                     <Manuales />
                     <BarraBuscadora progreso={66.6} onBuscar={(valor) => console.log("Buscar:", valor)} />
-                    <TablaManuales data={manualEmpleado} />
+                    <TablaManuales />
                 </div>
             </div>
 
