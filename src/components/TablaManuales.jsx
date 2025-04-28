@@ -18,6 +18,10 @@ const TablaManuales = () => {
             .catch(error => console.error("Error al cargar datos:", error));
     }, []);
 
+    const estadoLectura = (event) => {
+        setLectura(event.target.checked);
+    }
+
 
     // const filtrarBusqueda = manualEmpleado.filter(doc =>
     //     doc.manual?.titulo?.includes(busqueda)
@@ -67,14 +71,15 @@ const TablaManuales = () => {
                                     <input
                                         type="checkbox"
                                         checked={lectura}
-                                        onClick={() => { setLectura(true) }} readOnly
+                                        onChange={estadoLectura} readOnly
                                     />
                                 </td>
                                 <td className="border-t p-2 text-blue-700 hover:underline cursor-pointer">
                                     {doc.manual.titulo}
                                 </td>
                                 <td className="border-t p-2 uppercase text-gray-800 text-center">
-                                    {doc.manual.tipo || "SISTEMAS"}
+                                    {/* {doc.manual.tipo || "SISTEMAS"} */}
+                                    {doc.manual.departamento.nombre || "SISTEMAS"}
                                 </td>
                                 <td className="border-t p-2 text-gray-600 text-center">
                                     {doc.manual.fecha_actualizacion}
