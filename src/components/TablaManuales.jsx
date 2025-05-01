@@ -22,6 +22,10 @@ const TablaManuales = () => {
         setLectura(event.target.checked);
     }
 
+    const calculateProgress = () => {
+        const totalCount = checkbox
+    };
+
 
     // const filtrarBusqueda = manualEmpleado.filter(doc =>
     //     doc.manual?.titulo?.includes(busqueda)
