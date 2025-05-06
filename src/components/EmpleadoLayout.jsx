@@ -55,12 +55,14 @@ const Empleado = ({ empleado }) => {
             </div>
 
             {/* Columna derecha */}
-            <div className="p-5 overflow-y-auto">
-                <h3 className="text-md font-medium text-gray-700 mb-3">Vista previa del documento</h3>
+            <div className="overflow-y-auto">
+                <PdfViewer pdf={manualPDF.archivo_url} />
+                {/* <h3 className="text-md font-medium text-gray-700 mb-3">Vista previa del documento</h3>
                 <div className="border rounded p-4 text-gray-500 text-sm">
                     Selecciona un manual para visualizarlo aquí.
-                    <PdfViewer manual={manualEmpleado.archivo_url} />
-                </div>
+
+                    <PdfViewer pdf={manualPDF.archivo_url} />
+                </div> */}
             </div>
         </div>
     );
