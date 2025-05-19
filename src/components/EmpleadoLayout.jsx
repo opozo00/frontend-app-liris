@@ -6,6 +6,7 @@ import axios from 'axios';
 import BarraBuscadora from "./BarraBuscadora";
 import InfoEmpleado from "./EmpleadoInfo";
 import Manuales from "./Manuales";
+import ManualesEmpleadoPorCategoria from "./ManualesEmpleadoPorCategoria";
 import TablaManuales from "./TablaManuales";
 import PdfViewer from "./PdfViewer";
 
@@ -48,9 +49,10 @@ const Empleado = ({ empleado }) => {
                 {/* Información del empleado y manuales */}
                 <div className="space-y-6">
                     <InfoEmpleado empleado={empleado} />
-                    <Manuales />
+                    {/* <Manuales /> */}
+                    <ManualesEmpleadoPorCategoria idEmpleado={empleado} />
                     <BarraBuscadora progreso={66.6} onBuscar={(valor) => console.log("Buscar:", valor)} />
-                    <TablaManuales />
+                    {/* <TablaManuales /> */}
                 </div>
             </div>
 

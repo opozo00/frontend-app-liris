@@ -4,19 +4,19 @@ import Manuales from "./Manuales";
 
 
 
-const TablaManuales = () => {
+const TablaManuales = ({ manuales }) => {
     const [lectura, setLectura] = useState(false);
     const [paginaActual, setPaginaActual] = useState(1);
     const [busqueda, setBusqueda] = useState("");
     const maximoManuales = 15;
 
-    const [manualEmpleado, setmanualEmpleado] = useState([]);
+    // const [manualEmpleado, setmanualEmpleado] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:3000/api/empleadomanual/')
-            .then(response => setmanualEmpleado(response.data))
-            .catch(error => console.error("Error al cargar datos:", error));
-    }, []);
+    // useEffect(() => {
+    //     axios.get('http://localhost:3000/api/empleadomanual/')
+    //         .then(response => setmanualEmpleado([]))
+    //         .catch(error => console.error("Error al cargar datos:", error));
+    // }, []);
 
     const estadoLectura = (event) => {
         setLectura(event.target.checked);
@@ -53,9 +53,9 @@ const TablaManuales = () => {
     // };
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto min-w-[650px]">
             {/* Buscador */}
-            <table className="w-auto ml-3.5 mt-2 text-sm border border-gray-300 table-auto">
+            <table className="w-auto min-w-[650px] ml-3.5 mt-2 text-sm border border-gray-300 table-auto">
                 <thead className="bg-gray-100 text-gray-700 font-semibold">
                     <tr>
                         <th className="w-10 p-2 border-b border-gray-300 text-center">Estado</th>
@@ -65,8 +65,8 @@ const TablaManuales = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {manualEmpleado.length > 0 ? (
-                        manualEmpleado.map((doc, idx) => (
+                    {manuales.length > 0 ? (
+                        manuales.map((doc, idx) => (
                             <tr
                                 key={doc.id}
                                 className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
